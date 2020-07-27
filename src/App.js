@@ -13,8 +13,7 @@ class App extends React.Component {
     this.state = {
         books: [],
         printType: "all",
-        bookType: "ebooks",
-        searchTerm: ""
+        bookType: "ebooks"
     }
   }
 

@@ -13,7 +13,7 @@ class Search extends React.Component {
         return (
             <div className="searchBar">
                 <form className="search_form" onSubmit={this.handleSubmit}>
-                    <label htmlFor="search">Search:</label>
+                    <label htmlFor="search">Search: </label>
                     <input type="text" name="search" id="search"/>
                     <button type="submit">Search</button>
                 </form>

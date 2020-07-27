@@ -12,7 +12,7 @@ class PrintType extends React.Component {
     render() {
         return (
             <form className="printtype_form" onChange={this.handleChange}>
-                    <label htmlFor="printtype">Print Type:</label>
+                    <label htmlFor="printtype">Print Type: </label>
                     <select name="printtype" id="printtype">
                         <option value="all">all</option>
                         <option value="books">books</option>

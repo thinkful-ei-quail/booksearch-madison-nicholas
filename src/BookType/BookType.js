@@ -12,7 +12,7 @@ class BookType extends React.Component {
     render() {
         return (
             <form className="booktype_form" onChange={this.handleChange}>
-                <label htmlFor="booktype">Book Type:</label>
+                <label htmlFor="booktype">Book Type: </label>
                 <select name="booktype" id="booktype">
                     <option value="ebooks">ebooks</option>
                     <option value="free-ebooks">free-ebooks</option>

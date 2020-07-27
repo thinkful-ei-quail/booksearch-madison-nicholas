@@ -9,10 +9,12 @@ class Book extends React.Component {
         return (
             <div className="book">
                 <h2>{this.props.contents.volumeInfo.title}</h2>
-                <div className="book-expanded">
-                    <img src={this.props.contents.volumeInfo.imageLinks.thumbnail} alt={this.props.contents.volumeInfo.title} />
+                <div className="book-full">
+                    <div className="book-image">
+                        <img src={this.props.contents.volumeInfo.imageLinks.thumbnail} alt={this.props.contents.volumeInfo.title} />
+                    </div>
                     <div className="book-contents">
-                        <p>Author(s): {this.props.contents.volumeInfo.authors}</p>
+                        <p>Author: {this.props.contents.volumeInfo.authors}</p>
                         <p>Price: ${price}</p>
                         <p>{this.props.contents.volumeInfo.description}</p>
                     </div>
