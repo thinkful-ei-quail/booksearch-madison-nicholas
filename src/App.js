@@ -12,7 +12,7 @@ class App extends React.Component {
     this.state = {
         books: [],
         printType: "all",
-        bookType: "no filter"
+        bookType: "null"
     }
   }
 
@@ -41,6 +41,18 @@ class App extends React.Component {
       });
   }
 
+  handleBookTypeFilter = (bookType) => {
+    this.setState({
+      bookType: bookType
+    });
+    console.log(this.state.bookType);
+  }
+
+  handlePrintTypeFilter = (printType) => {
+    this.setState({
+      printType: printType
+    });
+  }
 
   render () {
     return (
@@ -51,8 +63,13 @@ class App extends React.Component {
         <Search 
           books={this.state.books}
           onSearch={this.handleSearch}/>
-        <Filters printType={this.state.printType} bookType={this.state.bookType}/>
-        <BookList books={this.state.books}/>
+        <Filters 
+          printType={this.state.printType} 
+          bookType={this.state.bookType}
+          onBookTypeFilter={this.handleBookTypeFilter}
+          onPrintTypeFilter={this.handlePrintTypeFilter}/>
+        <BookList 
+          books={this.state.books}/>
       </main>
     );
   }

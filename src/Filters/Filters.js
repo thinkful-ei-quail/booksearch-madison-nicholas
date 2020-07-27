@@ -6,8 +6,10 @@ class Filters extends React.Component {
     render() {
         return (
             <div className="filterBar">
-                <PrintType />
-                <BookType />
+                <PrintType
+                    onPrintTypeFilter={this.props.onPrintTypeFilter}/>
+                <BookType
+                    onBookTypeFilter={this.props.onBookTypeFilter}/>
             </div>
         );
     }

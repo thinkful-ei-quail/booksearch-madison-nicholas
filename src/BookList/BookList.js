@@ -11,7 +11,7 @@ class BookList extends React.Component {
                     key={bookHash}/>
            );
        }) 
-        console.log(this.props.books)
+        // console.log(this.props.books)
         return (
             <div className="booklist">
                 {bookContents}

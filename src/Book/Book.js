@@ -4,7 +4,7 @@ class Book extends React.Component {
     render() {
 
         let price = this.props.contents.saleInfo && this.props.contents.saleInfo.listPrice ? this.props.contents.saleInfo.listPrice.amount : '';
-        console.log(this.props.contents);
+        // console.log(this.props.contents);
         return (
             <div className="book">
                 <h2>{this.props.contents.volumeInfo.title}</h2>
