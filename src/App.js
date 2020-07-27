@@ -13,7 +13,8 @@ class App extends React.Component {
     this.state = {
         books: [],
         printType: "all",
-        bookType: "ebooks"
+        bookType: "ebooks",
+        searchTerm: ""
     }
   }
 
@@ -33,6 +34,7 @@ class App extends React.Component {
         let books = data.totalItems === 0 ? [] : data.items;
         this.setState({
           books: books,
+          searchTerm: searchTerm,
           error: null
         });
       })
@@ -47,14 +49,12 @@ class App extends React.Component {
     this.setState({
       bookType: bookType
     });
-    this.handleSearch();
   }
 
   handlePrintTypeFilter = (printType) => {
     this.setState({
       printType: printType
     });
-    this.handleSearch();
   }
 
   render () {

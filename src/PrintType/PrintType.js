@@ -5,7 +5,7 @@ class PrintType extends React.Component {
 
     handleChange = (e) => {
         e.preventDefault();
-        let printTypeFilter = (e.currentTarget.elements.printtype.value);
+        const printTypeFilter = (e.currentTarget.elements.printtype.value);
         this.props.onPrintTypeFilter(printTypeFilter);
     }
 

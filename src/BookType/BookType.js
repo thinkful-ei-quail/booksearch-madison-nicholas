@@ -5,7 +5,7 @@ class BookType extends React.Component {
 
     handleChange = (e) => {
         e.preventDefault();
-        let bookTypeFilter = (e.currentTarget.elements.booktype.value);
+        const bookTypeFilter = (e.currentTarget.elements.booktype.value);
         this.props.onBookTypeFilter(bookTypeFilter);
     }
 
