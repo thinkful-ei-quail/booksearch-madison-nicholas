@@ -2,7 +2,7 @@ import React from 'react';
 
 class BookType extends React.Component {
 
-    handleSubmit = (e) => {
+    handleChange = (e) => {
         e.preventDefault();
         let bookTypeFilter = (e.currentTarget.elements.booktype.value);
         this.props.onBookTypeFilter(bookTypeFilter);
@@ -10,7 +10,7 @@ class BookType extends React.Component {
 
     render() {
         return (
-            <form className="booktype_form" onChange={e => this.handleSubmit(e)}>
+            <form className="booktype_form" onChange={this.handleChange}>
                 <label htmlFor="booktype">Book Type:</label>
                 <select name="booktype" id="booktype">
                     <option value="null">no filter</option>

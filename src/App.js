@@ -45,13 +45,14 @@ class App extends React.Component {
     this.setState({
       bookType: bookType
     });
-    console.log(this.state.bookType);
+    // console.log(this.state.bookType);
   }
 
   handlePrintTypeFilter = (printType) => {
     this.setState({
       printType: printType
     });
+    // console.log(this.state.printType);
   }
 
   render () {

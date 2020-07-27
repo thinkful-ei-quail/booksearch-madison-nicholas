@@ -2,7 +2,7 @@ import React from 'react';
 
 class PrintType extends React.Component {
 
-    onSubmit = (e) => {
+    handleChange = (e) => {
         e.preventDefault();
         let printTypeFilter = (e.currentTarget.elements.printtype.value);
         this.props.onPrintTypeFilter(printTypeFilter);
@@ -10,7 +10,7 @@ class PrintType extends React.Component {
 
     render() {
         return (
-            <form className="printtype_form" onChange={e => this.onSubmit}>
+            <form className="printtype_form" onChange={this.handleChange}>
                     <label htmlFor="printtype">Print Type:</label>
                     <select name="printtype" id="printtype">
                         <option value="all">all</option>
