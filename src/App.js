@@ -5,6 +5,7 @@ import Filters from './Filters/Filters.js';
 import BookList from './BookList/BookList.js';
 
 const API_KEY = `AIzaSyD25U-z08co19g11eoyJUEfvutx75OIWjo`;
+const BASE_URL = `https://www.googleapis.com/books/v1/volumes`;
 
 class App extends React.Component {
   constructor() {
@@ -12,12 +13,13 @@ class App extends React.Component {
     this.state = {
         books: [],
         printType: "all",
-        bookType: "null"
+        bookType: "ebooks"
     }
   }
 
   handleSearch = (searchTerm) => {
-    const url = `https://www.googleapis.com/books/v1/volumes?q=${searchTerm}&key=${API_KEY}`;
+    const url = 
+      `${BASE_URL}?q=${searchTerm}&key=${API_KEY}&filter=${this.state.bookType}&printType=${this.state.printType}`;
 
     fetch(url)
       .then(res => {
@@ -45,14 +47,14 @@ class App extends React.Component {
     this.setState({
       bookType: bookType
     });
-    // console.log(this.state.bookType);
+    this.handleSearch();
   }
 
   handlePrintTypeFilter = (printType) => {
     this.setState({
       printType: printType
     });
-    // console.log(this.state.printType);
+    this.handleSearch();
   }
 
   render () {

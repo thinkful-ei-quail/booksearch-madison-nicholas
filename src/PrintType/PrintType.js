@@ -1,4 +1,5 @@
 import React from 'react';
+import './PrintType.css';
 
 class PrintType extends React.Component {
 

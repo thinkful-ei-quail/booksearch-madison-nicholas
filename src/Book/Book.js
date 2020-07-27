@@ -1,4 +1,5 @@
 import React from 'react';
+import './Book.css';
 
 class Book extends React.Component {
     render() {
@@ -9,7 +10,7 @@ class Book extends React.Component {
             <div className="book">
                 <h2>{this.props.contents.volumeInfo.title}</h2>
                 <div className="book-expanded">
-                    <img src={this.props.contents.volumeInfo.imageLinks.smallThumbnail} alt={this.props.contents.volumeInfo.title} />
+                    <img src={this.props.contents.volumeInfo.imageLinks.thumbnail} alt={this.props.contents.volumeInfo.title} />
                     <div className="book-contents">
                         <p>Author(s): {this.props.contents.volumeInfo.authors}</p>
                         <p>Price: ${price}</p>

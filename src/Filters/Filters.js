@@ -1,6 +1,7 @@
 import React from 'react';
 import PrintType from '../PrintType/PrintType.js';
 import BookType from '../BookType/BookType.js';
+import './Filters.css';
 
 class Filters extends React.Component {
     render() {
