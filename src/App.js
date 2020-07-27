@@ -16,8 +16,8 @@ class App extends React.Component {
     }
   }
 
-  componentDidMount() {
-    const url = `https://www.googleapis.com/books/v1/volumes?q=${searchTerms}&key=${API_KEY}`;
+  handleSearch = (searchTerm) => {
+    const url = `https://www.googleapis.com/books/v1/volumes?q=${searchTerm}&key=${API_KEY}`;
 
     fetch(url)
       .then(res => {
@@ -47,7 +47,9 @@ class App extends React.Component {
         <header>
           <h1>Google Book Search</h1>
         </header>
-        <Search books={this.state.books}/>
+        <Search 
+          books={this.state.books}
+          onSearch={this.handleSearch}/>
         <Filters printType={this.state.printType} bookType={this.state.bookType}/>
         <BookList books={this.state.books}/>
       </main>
