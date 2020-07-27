@@ -28,8 +28,9 @@ class App extends React.Component {
       })
       .then(res => res.json())
       .then(data => {
+        let books = data.totalItems === 0 ? [] : data.items;
         this.setState({
-          books: data,
+          books: books,
           error: null
         });
       })

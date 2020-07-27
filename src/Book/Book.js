@@ -2,15 +2,18 @@ import React from 'react';
 
 class Book extends React.Component {
     render() {
+
+        let price = this.props.contents.saleInfo && this.props.contents.saleInfo.listPrice ? this.props.contents.saleInfo.listPrice.amount : '';
+        console.log(this.props.contents);
         return (
             <div className="book">
-                <h2>Henry I</h2>
+                <h2>{this.props.contents.volumeInfo.title}</h2>
                 <div className="book-expanded">
-                    <img src="" alt="" />
+                    <img src={this.props.contents.volumeInfo.imageLinks.smallThumbnail} alt={this.props.contents.volumeInfo.title} />
                     <div className="book-contents">
-                        <p>Author: {this.props.contents.authors}</p>
-                        <p>Price: $50.00</p>
-                        <p>Description of this amazing book.</p>
+                        <p>Author(s): {this.props.contents.volumeInfo.authors}</p>
+                        <p>Price: ${price}</p>
+                        <p>{this.props.contents.volumeInfo.description}</p>
                     </div>
                 </div>
             </div>
