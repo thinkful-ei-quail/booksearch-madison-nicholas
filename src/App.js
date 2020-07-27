@@ -4,6 +4,8 @@ import Search from './Search/Search.js';
 import Filters from './Filters/Filters.js';
 import BookList from './BookList/BookList.js';
 
+const API_KEY = `AIzaSyD25U-z08co19g11eoyJUEfvutx75OIWjo`;
+
 class App extends React.Component {
   constructor() {
     super()
@@ -15,7 +17,27 @@ class App extends React.Component {
   }
 
   componentDidMount() {
-    const url = 'https://www.googleapis.com/books/v1/volumes?q={search terms}'
+    const url = `https://www.googleapis.com/books/v1/volumes?q=${searchTerms}&key=${API_KEY}`;
+
+    fetch(url)
+      .then(res => {
+        if(!res.ok) {
+          throw new Error('Something went wrong, please try again later.');
+        }
+        return res;
+      })
+      .then(res => res.json())
+      .then(data => {
+        this.setState({
+          books: data,
+          error: null
+        });
+      })
+      .catch(err => {
+        this.setState({
+          error: err.message
+        });
+      });
   }
 
 
