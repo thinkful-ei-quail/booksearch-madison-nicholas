@@ -3,8 +3,8 @@ import './Book.css';
 
 class Book extends React.Component {
     render() {
-
-        let price = this.props.contents.saleInfo && this.props.contents.saleInfo.listPrice ? this.props.contents.saleInfo.listPrice.amount : '';
+        let saleInfo = this.props.contents.saleInfo;
+        let price = saleInfo && saleInfo.listPrice ? `$${saleInfo.listPrice.amount}` : 'Not listed.';
         // console.log(this.props.contents);
         return (
             <div className="book">
@@ -15,7 +15,7 @@ class Book extends React.Component {
                     </div>
                     <div className="book-contents">
                         <p>Author: {this.props.contents.volumeInfo.authors}</p>
-                        <p>Price: ${price}</p>
+                        <p>Price: {price}</p>
                         <p>{this.props.contents.volumeInfo.description}</p>
                     </div>
                 </div>
